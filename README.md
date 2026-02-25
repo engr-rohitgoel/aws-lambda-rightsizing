@@ -44,7 +44,8 @@ The following is a sample request payload for a DynamoDB read item operation:
 }
 ```
 
-## Once reources created, we will run Lambda Power tuning (AWS Step Functions) to find optimal Memory based on required AWS Well Architected Framwork Pillar Cost Optimisation and Performance Efficiency or a balanced approach.
+## Once reources created, we will run Lambda Power tuning (AWS Step Functions) to find optimal Memory based on required AWS Well Architected Framework Pillar Cost Optimisation or Performance Efficiency or a balanced approach.
+
 ## Then we will trigger a Performance test with 10 Virtual Users using Postman Collection Runners to trigger POST APIs for 2 mins with Lambda Memory configuration 128 MB and 1024 MB and will compare the latency and throughput 
 
 ## Setup
