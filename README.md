@@ -287,6 +287,27 @@ In this step, you deploy the API that you created to a stage called prod.
 
 We have successfully created a serverless API using API Gateway, Lambda, and DynamoDB!
 
+### SetUp Lambda Power Tuning
+
+ This can be used to determine optimal memory to allocate to Lambda based on the goal i.e. best performance, or cheapest cost, or a balance etc.
+
+Go to Serverless Application Repository
+
+![Serverless Application Repository](./images/serverless-application-repository.jpg)
+
+Click Available Applications, type “power”, check “Show apps that create custom IAM roles or resource policies”
+
+ ![Power Tuning](./images/power-tuning.jpg)
+
+
+Select aws-lambda-power-tuning
+
+  ![Aws Lambda Power Tuning](./images/aws-lambda-power-tuning.jpg)
+
+ 
+Scroll down, keep everything as is, check “I acknowledge that this app creates custom IAM roles”, click “Deploy”
+
+
 ## Cleanup
 
 Let's clean up the resources we have created for this lab.
