@@ -371,16 +371,16 @@ This will be very useful to determine the latency and we will check how increasi
 4. Provide below POST payload in request body and paste it
 
     ![Request-Body](./images/request-body.jpg)
-   
-   ```json
+
+
+ ```json
    {
     "operation": "list",
     "tableName": "lambda-apigateway",
     "payload": {
     }
-}
+  }
 ```
-Now we are all set to run performance testing! 
 
 5.    Run the Collection with “Ramp up” under Load Profile, select “10” in Virtual users, and Test duration as 2 mins
  Note: 10 here is for concurrency limit available for lambda. if number is higher than lambda concurrency limit, API requests will fail with error "Too Many Requests"
