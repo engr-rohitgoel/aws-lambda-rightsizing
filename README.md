@@ -287,9 +287,12 @@ In this step, you deploy the API that you created to a stage called prod.
 
 We have successfully created a serverless API using API Gateway, Lambda, and DynamoDB!
 
-### SetUp Lambda Power Tuning
+###  AWS Lambda Power Tuning
 
- This can be used to determine optimal memory to allocate to Lambda based on the goal i.e. best performance, or cheapest cost, or a balance etc.
+ AWS Lambda Power Tuning is a open-source tool which is actually a state machine powered by AWS Step Functions that helps you optimize your Lambda functions for cost and/or performance in a data-driven way.
+ This is used to determine optimal memory to allocate to Lambda based on the goal i.e. best performance, or cheapest cost, or a balance etc.
+
+### SetUp Lambda Power Tuning
 
 Go to Serverless Application Repository
 
@@ -347,6 +350,53 @@ Execute Power Tuning(Step Function) with below input that will execute lambda wi
 
 **Conclusion:**  
 For this workload, **1024 MB** offers the best **latency consistency + throughput** with **lowest total execution cost**.
+
+
+##  Load Testing with Postman Collections Runner 
+
+You can run LoadTest the microservice(serverless or no serverless) and get performance report using Postman Collections Runner. Here we will use to it to perform load test on our serverless Microservice by sending API requests as per Strategy like RampUp which will be similar to API requests sent by Virtual Users.
+We will perform this load test with Lambda Memory 128 MB and 1024 MB to see latency changes.
+These requests will hit APIGateway and then reach to Lambda for processing and then to DynamoDB and return the return back.
+The Collection Runner logs the test results for each request, and it can use scripts to pass data between requests and change the request workflow.
+This will be very useful to determine the latency and we will check how increasing memory can impact this latency.
+
+## SetUp Postman Collection Run Configuration (This requires Postman Desktop Application)
+
+1. Open Postman Application on your desktop.
+2. Under Collections , Create a New Collection and rename it . then click on Add a Request.
+
+    ![Request](./images/request.jpg)
+
+3. Change GET to POST method in New Request and Add Lambda ARN APIgatway POST invoke url .
+4. Provide below POST payload in request body and paste it
+
+    ![Request-Body](./images/request-body.jpg)
+   
+   ```json
+   {
+    "operation": "list",
+    "tableName": "lambda-apigateway",
+    "payload": {
+    }
+}
+```
+Now we are all set to run performance testing! 
+
+5.    Run the Collection with “Ramp up” under Load Profile, select “10” in Virtual users, and Test duration as 2 mins
+ Note: 10 here is for concurrency limit available for lambda. if number is higher than lambda concurrency limit, API requests will fail with error "Too Many Requests"
+
+     ![Ramp-Up](./images/ramp-up.jpg)
+
+
+Let it run for 2 mins. It will generate a pdf report which can be downloaded .
+
+##  Workload Behavior Observation (Postman Load Testing)
+
+| Memory | Avg Latency | P90 | P95 | P99 | Errors | Result |
+|---:|---:|---:|---:|---:|---:|---|
+| 128 MB | ~900 ms | ~1128 ms | ~1194 ms | ~1446 ms | 0% |  High Latency under Load |
+| **1024 MB** | **~70–90 ms** | **~90 ms** | **~105 ms** | **~160 ms** | **0%** |  **Stable & scalable** |
+
 
 
 ## Cleanup
