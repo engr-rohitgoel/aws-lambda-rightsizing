@@ -50,6 +50,8 @@ The following is a sample request payload for a DynamoDB read item operation:
 
 ## Setup
 
+Setup can be done using terraform scripts present in Terraform folder or following manual setup below
+
 ### Create Custom Policy 
 
 We need to create a custom policy for least privilege
