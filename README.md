@@ -336,7 +336,7 @@ Execute Power Tuning(Step Function) with below input that will execute lambda wi
 
 ![Graph](./images/graph.jpg)
 
-##  Performance & Cost Observations (AWS Lambda Power Tuning)
+##  Performance & Cost Observations
 
 | Memory | Avg Duration | Cost per Invoke | Behavior | Outcome |
 |---:|---:|---:|---|---|
