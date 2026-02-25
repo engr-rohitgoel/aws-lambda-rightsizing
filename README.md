@@ -294,20 +294,15 @@ We have successfully created a serverless API using API Gateway, Lambda, and Dyn
 
 ### SetUp Lambda Power Tuning
 
-Go to Serverless Application Repository
-
-![Serverless Application Repository](./images/serverless-application-repository.jpg)
-
-Click Available Applications, type “power”, check “Show apps that create custom IAM roles or resource policies”
-
+1. Go to Serverless Application Repository
+2. Click Available Applications, type “power”.
  ![Power Tuning](./images/power-tuning.jpg)
 
-Select aws-lambda-power-tuning
+3. Select aws-lambda-power-tuning and deploy
 
   ![Aws Lambda Power Tuning](./images/aws-lambda-power-tuning.jpg)
   ![Lambda Power Tuning](./images/lambda-power-tuning.jpg)
  
-Scroll down, keep everything as is, check “I acknowledge that this app creates custom IAM roles”, click “Deploy”
 
 ## Execute Power Tuning for Lambda 
 
