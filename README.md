@@ -399,18 +399,5 @@ Let it run for 2 mins. It will generate a pdf report which can be downloaded .
 | 128 MB | ~900 ms | ~1128 ms | ~1194 ms | ~1446 ms | 0% |  High Latency under Load |
 | **1024 MB** | **~70–90 ms** | **~90 ms** | **~105 ms** | **~160 ms** | **0%** |  **Stable & scalable** |
 
-
-
-## Cleanup
-
-Let's clean up the resources we have created for this lab.
-
-
-### Cleaning up DynamoDB
-
-To delete the table, from DynamoDB console, select the table "lambda-apigateway", then on top right , click "Actions", then "Delete table"
-
-To delete the Lambda, from the Lambda console, select lambda "LambdaFunctionOverHttps", click "Actions", then click Delete 
-
-To delete the API we created, in API gateway console, under APIs, select "DynamoDBOperations" API, click "Delete"
+This shows how latency and Throughput increases with correct Memory Configuration.
 
