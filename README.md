@@ -1,4 +1,3 @@
-# serverless-powertuning
 
 ## Architecture Overview And High Level Design
 
