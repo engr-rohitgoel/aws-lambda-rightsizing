@@ -416,8 +416,12 @@ Let it run for 2 mins. It will generate a pdf report which can be downloaded .
 
 | Memory | Avg Latency | P90 | P95 | P99 | Errors | Result |
 |---:|---:|---:|---:|---:|---:|---|
-| 128 MB | ~900 ms | ~1128 ms | ~1194 ms | ~1446 ms | 0% |  High Latency under Load |
-| **1024 MB** | **~70–90 ms** | **~90 ms** | **~105 ms** | **~160 ms** | **0%** |  **Stable & scalable** |
+| 128 MB | ~900 ms | ~1128 ms | ~1160 ms | ~1519 ms | 0% |  High Latency under Load |
+| 1024 MB | ~600 ms | ~900 ms | ~900 ms | ~1000 ms | 0% |  **Lower Latency under same Load** |
 
-This shows how latency and Throughput increases with correct Memory Configuration.
+ ![Response-Time-128](./images/response-time-128.jpg)
+ 
+ ![Response-Time-1024](./images/response-time-1024.jpg)
+ 
+This shows how latency decreases with correct Memory Configuration.
 
